@@ -9,11 +9,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Netflix UI',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+          primarySwatch: Colors.blue,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+          scaffoldBackgroundColor: Colors.black),
+      home: const Scaffold(
+        body: Center(
+            child: Text(
+          'Netflix:\nHello World',
+          style: TextStyle(color: Colors.white),
+        )),
       ),
-      home: Scaffold(),
     );
   }
 }
