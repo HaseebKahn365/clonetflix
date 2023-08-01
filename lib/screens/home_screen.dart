@@ -55,12 +55,46 @@ class _HomeScreenState extends State<HomeScreen> {
             child: ContentHeader(featuredContent: sintelContent),
           ),
           SliverPadding(
-            padding: const EdgeInsets.only(top: 20.0),
+            padding: const EdgeInsets.only(bottom: 20.0),
+            sliver: SliverPadding(
+              padding: const EdgeInsets.only(top: 20.0),
+              sliver: SliverToBoxAdapter(
+                child: Previews(
+                  key: PageStorageKey('previews'),
+                  title: 'Previews',
+                  contentList: previews,
+                ),
+              ),
+            ),
+          ),
+          SliverPadding(
+            padding: const EdgeInsets.only(bottom: 20.0),
             sliver: SliverToBoxAdapter(
-              child: Previews(
-                key: PageStorageKey('previews'),
-                title: 'Previews',
-                contentList: previews,
+              child: ContentList(
+                key: PageStorageKey('myList'),
+                title: 'My List',
+                contentList: myList,
+              ),
+            ),
+          ),
+          SliverPadding(
+            padding: const EdgeInsets.only(bottom: 20.0),
+            sliver: SliverToBoxAdapter(
+              child: ContentList(
+                key: PageStorageKey('originals'),
+                title: 'Nettlix Originals',
+                contentList: originals,
+                isOriginals: true,
+              ),
+            ),
+          ),
+          SliverPadding(
+            padding: const EdgeInsets.only(bottom: 20.0),
+            sliver: SliverToBoxAdapter(
+              key: PageStorageKey('trending'),
+              child: ContentList(
+                title: 'Trending',
+                contentList: myList,
               ),
             ),
           ),

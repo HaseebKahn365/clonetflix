@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -52,7 +52,37 @@ class Previews extends StatelessWidget {
                       shape: BoxShape.circle,
                       border: Border.all(color: content.color!, width: 2.0),
                     ),
-                  )
+                  ),
+                  Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 16),
+                    height: 130.0,
+                    width: 130.0,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [
+                          Colors.black87,
+                          Colors.black45,
+                          Colors.transparent,
+                        ],
+                        stops: [
+                          0,
+                          0.25,
+                          1,
+                        ],
+                        begin: Alignment.bottomCenter,
+                        end: Alignment.topCenter,
+                      ),
+                      shape: BoxShape.circle,
+                    ),
+                  ),
+                  Positioned(
+                      left: 0,
+                      right: 0,
+                      bottom: 0,
+                      child: SizedBox(
+                        height: 60.0,
+                        child: Image.asset(content.titleImageUrl!),
+                      )),
                 ]),
               );
             },
