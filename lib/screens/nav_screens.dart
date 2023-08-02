@@ -1,4 +1,5 @@
 import 'package:clonetflix/screens/home_screen.dart';
+import 'package:clonetflix/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class NavScreen extends StatefulWidget {
@@ -30,26 +31,28 @@ class _NavScreenState extends State<NavScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _screens[_currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        items: _icons
-            .map(
-              (title, icon) => MapEntry(
-                title,
-                BottomNavigationBarItem(
-                  icon: Icon(icon, size: 30.0),
-                  label: title,
-                ),
-              ),
-            )
-            .values
-            .toList(),
-        currentIndex: _currentIndex,
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.grey,
-        backgroundColor: Colors.black,
-        type: BottomNavigationBarType.fixed,
-        onTap: (index) => setState(() => _currentIndex = index),
-      ),
+      bottomNavigationBar: Responsive.isDesktop(context)
+          ? const SizedBox.shrink()
+          : BottomNavigationBar(
+              items: _icons
+                  .map(
+                    (title, icon) => MapEntry(
+                      title,
+                      BottomNavigationBarItem(
+                        icon: Icon(icon, size: 30.0),
+                        label: title,
+                      ),
+                    ),
+                  )
+                  .values
+                  .toList(),
+              currentIndex: _currentIndex,
+              selectedItemColor: Colors.white,
+              unselectedItemColor: Colors.grey,
+              backgroundColor: Colors.black,
+              type: BottomNavigationBarType.fixed,
+              onTap: (index) => setState(() => _currentIndex = index),
+            ),
     );
   }
 }

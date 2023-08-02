@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:clonetflix/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 import '../assets.dart';
@@ -16,34 +17,121 @@ class CustomAppBar extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10.0),
       color: Colors.black.withOpacity((scrollOffset / 350).clamp(0, 1).toDouble()),
-      child: SafeArea(
-        child: Row(
-          children: [
-            Image.asset(Assets.netflixLogo0),
-            const SizedBox(
-              width: 12,
+      child: Responsive(mobile: _CustomAppBarMobile(), desktop: _CustomAppBarDesktop()),
+    );
+  }
+}
+
+class _CustomAppBarMobile extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Row(
+        children: [
+          Image.asset(Assets.netflixLogo0),
+          const SizedBox(
+            width: 12,
+          ),
+          Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                _AppbarButtons(
+                  title: 'TV shows',
+                  onTap: () {},
+                ),
+                _AppbarButtons(
+                  title: 'Movies',
+                  onTap: () {},
+                ),
+                _AppbarButtons(
+                  title: 'My List',
+                  onTap: () {},
+                ),
+              ],
             ),
-            Expanded(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  _AppbarButtons(
-                    title: 'TV shows',
-                    onTap: () {},
-                  ),
-                  _AppbarButtons(
-                    title: 'Movies',
-                    onTap: () {},
-                  ),
-                  _AppbarButtons(
-                    title: 'My List',
-                    onTap: () {},
-                  ),
-                ],
-              ),
-            )
-          ],
-        ),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class _CustomAppBarDesktop extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Row(
+        children: [
+          Image.asset(Assets.netflixLogo1),
+          const SizedBox(
+            width: 12,
+          ),
+          Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                _AppbarButtons(
+                  title: 'Home',
+                  onTap: () {},
+                ),
+                _AppbarButtons(
+                  title: 'Movies',
+                  onTap: () {},
+                ),
+                _AppbarButtons(
+                  title: 'My List',
+                  onTap: () {},
+                ),
+                _AppbarButtons(
+                  title: 'Latest',
+                  onTap: () {},
+                ),
+                _AppbarButtons(
+                  title: 'TV Shows',
+                  onTap: () {},
+                ),
+              ],
+            ),
+          ),
+          const Spacer(),
+          Expanded(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                IconButton(
+                  padding: EdgeInsets.zero,
+                  onPressed: () {},
+                  icon: Icon(Icons.search),
+                  iconSize: 28.0,
+                  color: Colors.white,
+                ),
+                _AppbarButtons(
+                  title: 'KIDS',
+                  onTap: () {},
+                ),
+                _AppbarButtons(
+                  title: 'DVD',
+                  onTap: () {},
+                ),
+                IconButton(
+                  padding: EdgeInsets.zero,
+                  onPressed: () {},
+                  icon: Icon(Icons.card_giftcard),
+                  iconSize: 28.0,
+                  color: Colors.white,
+                ),
+                IconButton(
+                  padding: EdgeInsets.zero,
+                  onPressed: () {},
+                  icon: Icon(Icons.notifications_active),
+                  iconSize: 28.0,
+                  color: Colors.white,
+                ),
+              ],
+            ),
+          )
+        ],
       ),
     );
   }
