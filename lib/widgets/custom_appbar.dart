@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:clonetflix/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -102,7 +100,7 @@ class _CustomAppBarDesktop extends StatelessWidget {
                 IconButton(
                   padding: EdgeInsets.zero,
                   onPressed: () {},
-                  icon: Icon(Icons.search),
+                  icon: const Icon(Icons.search),
                   iconSize: 28.0,
                   color: Colors.white,
                 ),
@@ -117,14 +115,14 @@ class _CustomAppBarDesktop extends StatelessWidget {
                 IconButton(
                   padding: EdgeInsets.zero,
                   onPressed: () {},
-                  icon: Icon(Icons.card_giftcard),
+                  icon: const Icon(Icons.card_giftcard),
                   iconSize: 28.0,
                   color: Colors.white,
                 ),
                 IconButton(
                   padding: EdgeInsets.zero,
                   onPressed: () {},
-                  icon: Icon(Icons.notifications_active),
+                  icon: const Icon(Icons.notifications_active),
                   iconSize: 28.0,
                   color: Colors.white,
                 ),
@@ -147,7 +145,7 @@ class _AppbarButtons extends StatelessWidget {
     return GestureDetector(
         onTap: () {},
         child: Text(
-          '$title',
+          title,
           style: const TextStyle(color: Colors.white, fontSize: 16.0, fontWeight: FontWeight.w600),
         ));
   }

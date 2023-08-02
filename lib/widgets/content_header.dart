@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:clonetflix/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
@@ -97,7 +95,7 @@ class _ContentHeaderDesktopState extends State<_ContentHeaderDesktop> {
   void initState() {
     super.initState();
     final videoUri = Uri.parse(widget.featuredContent.videoUrl!);
-    _videoController = VideoPlayerController.network(videoUri.toString())
+    _videoController = VideoPlayerController.networkUrl(videoUri)
       ..initialize().then((_) => setState(() {}))
       ..setVolume(0)
       ..play()
@@ -168,12 +166,12 @@ class _ContentHeaderDesktopState extends State<_ContentHeaderDesktop> {
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Row(
                   children: [
-                    _PlayButton(),
+                    const _PlayButton(),
                     const SizedBox(
                       width: 16.0,
                     ),
@@ -228,7 +226,7 @@ class _PlayButton extends StatelessWidget {
         Icons.play_arrow,
         size: 20.0,
       ),
-      label: Text(
+      label: const Text(
         'Play',
         style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w600),
       ),

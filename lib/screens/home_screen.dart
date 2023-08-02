@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
 
 import '../data/data.dart';
@@ -50,14 +48,14 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: CustomScrollView(
         controller: _scrollController,
-        slivers: [
+        slivers: const [
           SliverToBoxAdapter(
             child: ContentHeader(featuredContent: sintelContent),
           ),
           SliverPadding(
-            padding: const EdgeInsets.only(bottom: 20.0),
+            padding: EdgeInsets.only(bottom: 20.0),
             sliver: SliverPadding(
-              padding: const EdgeInsets.only(top: 20.0),
+              padding: EdgeInsets.only(top: 20.0),
               sliver: SliverToBoxAdapter(
                 child: Previews(
                   key: PageStorageKey('previews'),
@@ -68,7 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           SliverPadding(
-            padding: const EdgeInsets.only(bottom: 20.0),
+            padding: EdgeInsets.only(bottom: 20.0),
             sliver: SliverToBoxAdapter(
               child: ContentList(
                 key: PageStorageKey('myList'),
@@ -78,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           SliverPadding(
-            padding: const EdgeInsets.only(bottom: 20.0),
+            padding: EdgeInsets.only(bottom: 20.0),
             sliver: SliverToBoxAdapter(
               child: ContentList(
                 key: PageStorageKey('originals'),
@@ -89,7 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
           ),
           SliverPadding(
-            padding: const EdgeInsets.only(bottom: 20.0),
+            padding: EdgeInsets.only(bottom: 20.0),
             sliver: SliverToBoxAdapter(
               child: ContentList(
                 key: PageStorageKey('trending'),

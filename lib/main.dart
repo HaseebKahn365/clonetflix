@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Netflix UI',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue, scaffoldBackgroundColor: Colors.black),
-      home: (MediaQuery.of(context).size.width > 600) ? HomeScreen() : NavScreen(),
+      home: (MediaQuery.of(context).size.width > 600) ? const HomeScreen() : const NavScreen(),
     );
   }
 }

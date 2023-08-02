@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 
 import '../models/content_model.dart';
@@ -20,7 +18,7 @@ class ContentList extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.white,
               fontSize: 20.0,
               fontWeight: FontWeight.bold,
@@ -28,7 +26,7 @@ class ContentList extends StatelessWidget {
             ),
           ),
         ),
-        Container(
+        SizedBox(
           height: isOriginals ? 500.0 : 220.0,
           child: ListView.builder(
             itemCount: contentList.length,
@@ -37,9 +35,7 @@ class ContentList extends StatelessWidget {
             itemBuilder: (BuildContext context, int index) {
               final Content content = contentList[index];
               return GestureDetector(
-                onTap: () {
-                  print(content.name);
-                },
+                onTap: () {},
                 child: Container(
                   margin: const EdgeInsets.symmetric(horizontal: 8.0),
                   height: isOriginals ? 400.0 : 200.0,

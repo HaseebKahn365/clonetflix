@@ -1,7 +1,4 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 import '../models/content_model.dart';
 
@@ -19,7 +16,7 @@ class Previews extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
           child: Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.white,
               fontSize: 20.0,
               fontWeight: FontWeight.bold,
@@ -57,7 +54,7 @@ class Previews extends StatelessWidget {
                     margin: const EdgeInsets.symmetric(horizontal: 16),
                     height: 130.0,
                     width: 130.0,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       gradient: LinearGradient(
                         colors: [
                           Colors.black87,
