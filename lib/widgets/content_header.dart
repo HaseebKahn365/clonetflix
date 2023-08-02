@@ -64,7 +64,7 @@ class _ContentHeaderMobile extends StatelessWidget {
                 title: 'List',
                 onTap: () {},
               ),
-              _PlayButton(),
+              const _PlayButton(),
               VerticalIconButton(
                 icon: Icons.info_outline,
                 title: 'Info',
@@ -105,6 +105,7 @@ class _ContentHeaderDesktopState extends State<_ContentHeaderDesktop> {
   @override
   void dispose() {
     _videoController!.dispose();
+    super.dispose();
   }
 
   @override
@@ -160,7 +161,7 @@ class _ContentHeaderDesktopState extends State<_ContentHeaderDesktop> {
                     shadows: [
                       Shadow(
                         color: Colors.black.withOpacity(0.25),
-                        offset: Offset(2.0, 4.0),
+                        offset: const Offset(2.0, 4.0),
                         blurRadius: 6.0,
                       ),
                     ],
