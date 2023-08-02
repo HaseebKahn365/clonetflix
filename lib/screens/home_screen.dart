@@ -6,16 +6,16 @@ import '../data/data.dart';
 import '../widgets/widgets.dart';
 
 class HomeScreen extends StatefulWidget {
-  HomeScreen({super.key});
+  const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
 
+double _scrollOffset = 0.0; //made global
+
 class _HomeScreenState extends State<HomeScreen> {
   ScrollController _scrollController = ScrollController();
-
-  double _scrollOffset = 0.0;
 
   @override
   void initState() {
@@ -91,8 +91,8 @@ class _HomeScreenState extends State<HomeScreen> {
           SliverPadding(
             padding: const EdgeInsets.only(bottom: 20.0),
             sliver: SliverToBoxAdapter(
-              key: PageStorageKey('trending'),
               child: ContentList(
+                key: PageStorageKey('trending'),
                 title: 'Trending',
                 contentList: myList,
               ),

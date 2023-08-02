@@ -1,6 +1,5 @@
+import 'package:clonetflix/screens/nav_screens.dart';
 import 'package:flutter/material.dart';
-
-import 'screens/home_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -13,7 +12,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Netflix UI',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.blue, scaffoldBackgroundColor: Colors.black),
-      home: HomeScreen(),
+      home: NavScreen(),
     );
   }
 }
